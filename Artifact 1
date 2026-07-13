@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hanisha Tejaswini Pachamattla | AI Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FBF6F0;
+    --surface:#FFFFFF;
+    --ink:#2B1D12;
+    --muted:#8A7563;
+    --vanilla:#D7BDA6;
+    --vanilla-soft:#F1E4D8;
+    --caramel:#AB7743;
+    --caramel-deep:#8B5E32;
+    --coffee:#6D3914;
+    --black:#181310;
+    --border:#E7D9CB;
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1100px 480px at 12% -8%, rgba(215,189,166,0.35), transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, rgba(171,119,67,0.10), transparent 55%),
+      var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .mono{font-family:'IBM Plex Mono',monospace}
+  h1,h2,h3{font-family:'Fraunces',serif;letter-spacing:-0.01em;margin:0;color:var(--ink)}
+  a{color:var(--caramel-deep)}
+  .wrap{max-width:960px;margin:0 auto;padding:0 28px}
+
+  /* Header */
+  header{padding:88px 0 56px;position:relative}
+  header::after{
+    content:"";
+    display:block;
+    margin-top:44px;
+    height:1px;
+    background:linear-gradient(90deg, var(--caramel) 0%, var(--vanilla) 45%, transparent 100%);
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:#4A2410;;
+    text-transform:uppercase;
+    letter-spacing:0.16em;
+    margin-bottom:18px;
+    display:flex;align-items:center;gap:10px;font-weight:600
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--caramel)}
+  h1{font-size:clamp(34px,5.4vw,54px);font-weight:600;line-height:1.08}
+  .role{font-size:18px;color:var(--black);margin-top:16px;max-width:620px;font-weight:400}
+  nav{margin-top:32px;display:flex;gap:28px;font-size:14px}
+  nav a{color:var(--ink);text-decoration:none;padding-bottom:3px;border-bottom:1px solid transparent;transition:border-color .2s, color .2s}
+  nav a:hover{border-color:var(--caramel);color:var(--caramel-deep)}
+
+  section{padding:64px 0;border-bottom:1px solid var(--border)}
+  section:last-of-type{border-bottom:none}
+ 	.label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;color:var(--black);text-transform:uppercase;letter-spacing:0.14em;margin-bottom:26px;
+    display:flex;align-items:center;gap:10px;
+    font-weight:600;
+  }
+  .label::before{content:"";width:14px;height:1px;background:var(--caramel)}
+
+  /* Bio */
+  .bio-grid{display:grid;grid-template-columns:200px 1fr;gap:44px}
+  @media (max-width:680px){.bio-grid{grid-template-columns:1fr}}
+  .log{display:flex;flex-direction:column;gap:22px}
+  .log-item{font-size:12px;color:#5C4433;line-height:1.6}
+  .log-item .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--caramel);margin-right:9px;vertical-align:middle}
+  .log-item strong{color:var(--ink);font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:12px}
+  .bio-text p{margin:0 0 18px;max-width:62ch;color:var(--black);font-size:15.5px}
+  .bio-text .highlight{color:var(--caramel-deep);font-weight:600}
+
+  /* Value proposition */
+  .vp-card{
+    background:linear-gradient(155deg, var(--vanilla-soft) 0%, var(--surface) 60%);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:40px 44px;
+    position:relative;
+    overflow:hidden;
+  }
+  .vp-card::before{
+    content:"\201C";
+    position:absolute; top:-6px; left:20px;
+    font-family:'Fraunces',serif;
+    font-size:120px;
+    color:var(--vanilla);
+    line-height:1;
+    z-index:0;
+  }
+  .vp-card p{
+    font-size:21px;font-family:'Fraunces',serif;font-weight:500;margin:0;line-height:1.5;
+    color:var(--ink); position:relative; z-index:1;
+  }
+
+  /* Artifact card */
+  .artifact{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:0 1px 2px rgba(43,29,18,0.04), 0 12px 32px -18px rgba(139,94,50,0.35);
+  }
+  .artifact-head{
+    padding:26px 30px;
+    border-bottom:1px solid var(--border);
+    display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;
+    background:var(--vanilla-soft);
+  }
+  .artifact-head h3{font-size:21px;font-weight:600}
+  .tag{
+    font-size:11px;background:var(--caramel);color:#fff;padding:5px 13px;border-radius:999px;
+    font-family:'IBM Plex Mono',monospace;letter-spacing:0.02em;
+  }
+  .artifact-body{padding:32px 30px}
+  table.meta{width:100%;border-collapse:collapse;font-size:14.5px}
+  table.meta td{padding:14px 0;vertical-align:top;border-top:1px solid var(--border)}
+  table.meta tr:first-child td{border-top:none}
+  table.meta td:first-child{
+    width:170px;color:#4A2410;font-family:'IBM Plex Mono',monospace;font-size:11.5px;
+    text-transform:uppercase;letter-spacing:0.05em;padding-right:20px;font-weight:600;
+  }
+  .artifact-link{
+    display:inline-block;margin-top:26px;font-size:14px;font-weight:600;text-decoration:none;
+    color:#fff;background:linear-gradient(135deg, var(--caramel) 0%, var(--caramel-deep) 100%);
+    padding:12px 22px;border-radius:8px;
+    box-shadow:0 6px 16px -6px rgba(139,94,50,0.55);
+    transition:transform .15s, box-shadow .15s;
+  }
+  .artifact-link:hover{transform:translateY(-1px); box-shadow:0 10px 20px -6px rgba(139,94,50,0.6)}
+
+  footer{padding:52px 0 84px;font-size:13.5px;color:var(--muted);text-align:center}
+  footer strong{color:var(--ink);font-family:'Fraunces',serif;font-size:16px;font-weight:600}
+  footer a{color:var(--caramel-deep);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">AI / ML Portfolio</div>
+    <h1>Hanisha Tejaswini Pachamattla</h1>
+    <p class="role">AI Developer &amp; Enthusiast — Master's Student in Artificial Intelligence -Data Analytics Specialization, building practical AI solutions that solve real-world business problems.</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#value">Value Proposition</a>
+      <a href="#artifacts">Artifacts</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <div class="label">About</div>
+    <div class="bio-grid">
+      <div class="log mono">
+        <div class="log-item"><span class="dot"></span><strong>2026</strong><br>Started Master of Science in Artificial Intelligence at Indiana Wesleyan University</div>
+        <div class="log-item"><span class="dot"></span><strong>Current</strong><br>Building AI portfolio projects and hands-on machine learning applications</div>
+        <div class="log-item"><span class="dot"></span><strong>Next</strong><br>Developing Retrieval-Augmented Generation (RAG) applications and AI agents using modern LLM technologies</div>
+      </div>
+      <div class="bio-text">
+        <p>I am an AI developer specializing in Data Analytics, focused on designing intelligent, data-driven solutions that address real business challenges. By combining artificial intelligence, machine learning, and analytics, I aim to help organizations improve operational efficiency, automate workflows, and make informed business decisions. Currently pursuing a Master of Science in Artificial Intelligence at Indiana Wesleyan University, I am expanding my expertise in <span class="highlight">machine learning, generative AI, intelligent automation, and AI-powered applications</span>.</p>
+        <p>This portfolio documents my journey from academic learning to real-world AI implementation by showcasing projects that combine technical skill with practical business value. My goal is to design intelligent solutions that improve customer experiences, automate business processes, and support data-driven decision-making.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="value">
+    <div class="label">Value Proposition</div>
+    <div class="vp-card">
+      <p>I specialize in applying Artificial Intelligence, Machine Learning, Generative AI, and Data Analytics to design intelligent solutions that solve real-world business problems, developing AI-powered applications using large language models, predictive analytics, and intelligent automation to optimize business processes, enhance customer experiences, and enable data-driven decision-making across organizations.</p>
+    </div>
+  </section>
+
+  <section id="artifacts">
+    <div class="label">Artifact 01</div>
+    <div class="artifact">
+      <div class="artifact-head">
+        <h3>The Daily Brew — AI Customer Assistant</h3>
+        <span class="tag">AI CHATBOT</span>
+      </div>
+      <div class="artifact-body">
+        <table class="meta">
+          <tr><td>Introduction</td><td>An AI-powered customer service chatbot built for a small cafe, designed and tested end-to-end using the design thinking framework (Empathize, Define, Ideate, Prototype, Test).</td></tr>
+          <tr><td>Description</td><td>A conversational assistant that answers customer questions about hours, menu and pricing, dietary accommodations, offers, loyalty program, reservations, and catering — and knows when to hand off to a human staff member instead of guessing.</td></tr>
+          <tr><td>Objective</td><td>To design and build a working AI assistant that solves a real small-business problem: answering repetitive customer questions instantly, without requiring 24/7 staff availability.</td></tr>
+          <tr><td>Process</td><td>Started with empathy for the end user (cafe customers wanting fast answers) before writing a line of configuration. Built a structured knowledge base covering the café's operations, then wrote custom behavioral instructions defining tone and strict boundaries (e.g., never promising allergen-free food, never committing to large catering orders). Tested with real conversations, including a simulated complaint, and used the results to identify a concrete improvement (more empathetic complaint handling) for future iteration.</td></tr>
+          <tr><td>Tools &amp; Technologies</td><td>Chatbase (AI agent builder), GitHub Pages (public deployment)</td></tr>
+          <tr><td>Value Proposition</td><td>Demonstrates the ability to translate a business problem into a working AI solution — not just prompting a chatbot, but deliberately designing its knowledge, boundaries, and escalation behavior around a real user need.</td></tr>
+          <tr><td>Unique Value</td><td>Shows applied, hands-on AI/ML capability rather than theoretical knowledge: I can scope a problem, build a working prototype, test it critically, and identify specific, grounded improvements rather than treating the first working version as finished.</td></tr>
+          <tr><td>Relevance</td><td>Directly relevant to roles applying AI to business operations — the exact intersection I'm aiming for as I move toward a career connecting AI capabilities to real business problems.</td></tr>
+        </table>
+        <a class="artifact-link" href="https://hanisha-varma.github.io/Daily-brew-assistant/" target="_blank">Try the assistant →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <strong>Hanisha Tejaswini Pachamattla</strong><br><br>
+    📧 <a href="mailto:hanisha.826tejaswini@gmail.com">hanisha.826tejaswini@gmail.com</a> &nbsp;|&nbsp;
+    💼 <a href="https://www.linkedin.com/in/hanishap" target="_blank">LinkedIn</a> &nbsp;|&nbsp;
+    💻 <a href="https://github.com/Hanisha-Varma" target="_blank">GitHub</a>
+  </footer>
+</div>
+
+</body>
+</html>
