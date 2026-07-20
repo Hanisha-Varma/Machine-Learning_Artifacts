@@ -147,6 +147,201 @@
   footer strong{color:var(--ink);font-family:'Fraunces',serif;font-size:16px;font-weight:600}
   footer a{color:var(--caramel-deep);text-decoration:none}
   footer a:hover{text-decoration:underline}
+
+  /* ============================================================
+     ARTIFACT 2 — Financial Services & Banking AI Strategy
+     Extends existing design tokens only. No new palette added.
+     ============================================================ */
+
+  @keyframes fadeUp{
+    from{opacity:0; transform:translateY(18px)}
+    to{opacity:1; transform:translateY(0)}
+  }
+  .a2-fade{animation:fadeUp .7s ease both}
+  .a2-fade:nth-child(2){animation-delay:.08s}
+  .a2-fade:nth-child(3){animation-delay:.16s}
+
+  /* Hero */
+  .a2-hero{
+    position:relative;
+    border-radius:var(--radius);
+    overflow:hidden;
+    padding:64px 40px;
+    background:
+      radial-gradient(680px 320px at 8% 0%, rgba(215,189,166,0.55), transparent 60%),
+      radial-gradient(560px 340px at 100% 100%, rgba(171,119,67,0.28), transparent 55%),
+      linear-gradient(155deg, var(--vanilla-soft) 0%, var(--surface) 55%, var(--vanilla-soft) 100%);
+    border:1px solid var(--border);
+  }
+  .a2-hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+  .a2-badge{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;letter-spacing:0.04em;
+    background:var(--surface);
+    border:1px solid var(--border);
+    color:var(--caramel-deep);
+    padding:7px 14px;border-radius:999px;
+    display:inline-flex;align-items:center;gap:6px;
+    box-shadow:0 4px 12px -8px rgba(139,94,50,0.4);
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .a2-badge:hover{transform:translateY(-3px); box-shadow:0 10px 20px -10px rgba(139,94,50,0.55); border-color:var(--caramel)}
+  .a2-hero h2{
+    font-size:clamp(30px,4.6vw,46px);
+    font-weight:600;line-height:1.1;
+    max-width:15ch;
+    margin-bottom:18px;
+  }
+  .a2-hero .a2-sub{
+    font-size:17px;color:var(--black);max-width:60ch;margin-bottom:22px;
+  }
+  .a2-hero .a2-intro{
+    font-size:14.5px;color:#5C4433;max-width:66ch;
+  }
+
+  /* Section label reused, sub-headings for internal blocks */
+  .a2-block-title{
+    font-family:'Fraunces',serif;font-size:23px;font-weight:600;margin-bottom:18px;
+  }
+
+  /* Objective highlight card (extends .vp-card look) */
+  .a2-objective{
+    background:linear-gradient(155deg, var(--surface) 0%, var(--vanilla-soft) 100%);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:36px 40px;
+    position:relative;
+    overflow:hidden;
+  }
+  .a2-objective::before{
+    content:"";
+    position:absolute; top:0; left:0; bottom:0; width:4px;
+    background:linear-gradient(180deg, var(--caramel) 0%, var(--coffee) 100%);
+  }
+  .a2-objective p{
+    font-size:18px;font-family:'Fraunces',serif;font-weight:500;line-height:1.55;margin:0;color:var(--ink);
+  }
+
+  /* Timeline */
+  .a2-timeline{position:relative;padding-left:38px}
+  .a2-timeline::before{
+    content:"";position:absolute;left:13px;top:6px;bottom:6px;width:2px;
+    background:linear-gradient(180deg, var(--caramel) 0%, var(--vanilla) 80%, transparent 100%);
+  }
+  .a2-tl-item{position:relative;padding-bottom:34px}
+  .a2-tl-item:last-child{padding-bottom:0}
+  .a2-tl-icon{
+    position:absolute;left:-38px;top:0;
+    width:28px;height:28px;border-radius:50%;
+    background:var(--surface);border:2px solid var(--caramel);
+    display:flex;align-items:center;justify-content:center;
+    font-size:13px;z-index:1;
+    box-shadow:0 4px 10px -4px rgba(139,94,50,0.5);
+  }
+  .a2-tl-content strong{
+    display:block;font-family:'Fraunces',serif;font-size:16.5px;font-weight:600;color:var(--ink);margin-bottom:4px;
+  }
+  .a2-tl-content span{font-size:14px;color:#5C4433}
+
+  /* Technology / Impact card grids */
+  .a2-card-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;
+  }
+  .a2-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:24px 20px;
+    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  }
+  .a2-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 16px 30px -18px rgba(139,94,50,0.5);
+    border-color:var(--caramel);
+  }
+  .a2-card .a2-icon{font-size:26px;margin-bottom:12px;display:block}
+  .a2-card h4{font-family:'Fraunces',serif;font-size:16px;font-weight:600;margin-bottom:6px;color:var(--ink)}
+  .a2-card p{font-size:13.5px;color:#5C4433;margin:0;line-height:1.55}
+
+  /* Presentation gallery */
+  .a2-gallery-row{
+    display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;
+    padding:36px 0;border-bottom:1px solid var(--border);
+  }
+  .a2-gallery-row:last-child{border-bottom:none}
+  .a2-gallery-row.reverse .a2-gallery-img{order:2}
+  .a2-gallery-row.reverse .a2-gallery-text{order:1}
+  .a2-gallery-img{
+    border-radius:var(--radius);
+    overflow:hidden;
+    border:1px solid var(--border);
+    box-shadow:0 14px 30px -18px rgba(139,94,50,0.45);
+  }
+  .a2-gallery-img img{
+    display:block;width:100%;height:auto;
+    transition:transform .4s ease;
+  }
+  .a2-gallery-img:hover img{transform:scale(1.06)}
+  .a2-gallery-text .a2-icon{font-size:22px;display:block;margin-bottom:10px}
+  .a2-gallery-text h4{font-family:'Fraunces',serif;font-size:19px;font-weight:600;margin-bottom:10px;color:var(--ink)}
+  .a2-gallery-text p{font-size:14.5px;color:#5C4433;margin:0;line-height:1.65}
+  @media (max-width:680px){
+    .a2-gallery-row, .a2-gallery-row.reverse{grid-template-columns:1fr}
+    .a2-gallery-row.reverse .a2-gallery-img, .a2-gallery-row.reverse .a2-gallery-text{order:initial}
+  }
+
+  /* Key learnings */
+  .a2-learnings{
+    background:linear-gradient(155deg, var(--vanilla-soft) 0%, var(--surface) 60%);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:36px 40px;
+  }
+  .a2-learnings ul{margin:0;padding-left:20px}
+  .a2-learnings li{font-size:15px;color:var(--black);margin-bottom:10px;line-height:1.6}
+  .a2-learnings li:last-child{margin-bottom:0}
+  .a2-learnings li strong{color:var(--caramel-deep)}
+
+  /* Skills badges */
+  .a2-skills{display:flex;flex-wrap:wrap;gap:10px}
+  .a2-skill-badge{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;
+    border:1px solid var(--border);
+    background:var(--surface);
+    color:var(--coffee);
+    padding:8px 15px;border-radius:999px;
+    transition:transform .2s ease, background .2s ease, color .2s ease;
+  }
+  .a2-skill-badge:hover{
+    transform:translateY(-3px);
+    background:var(--caramel);
+    color:#fff;
+    border-color:var(--caramel);
+  }
+
+  /* Action buttons */
+  .a2-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
+  .a2-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:14px;font-weight:600;text-decoration:none;
+    padding:13px 24px;border-radius:8px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .a2-btn-primary{
+    color:#fff;background:linear-gradient(135deg, var(--caramel) 0%, var(--caramel-deep) 100%);
+    box-shadow:0 6px 16px -6px rgba(139,94,50,0.55);
+  }
+  .a2-btn-primary:hover{transform:translateY(-2px); box-shadow:0 12px 22px -8px rgba(139,94,50,0.6)}
+  .a2-btn-outline{
+    color:var(--caramel-deep);background:var(--surface);border:1px solid var(--caramel);
+  }
+  .a2-btn-outline:hover{transform:translateY(-2px); background:var(--vanilla-soft)}
+
+  @media (max-width:680px){
+    .a2-hero{padding:44px 24px}
+    .a2-objective{padding:28px 24px}
+    .a2-learnings{padding:28px 24px}
+  }
 </style>
 </head>
 <body>
@@ -160,6 +355,7 @@
       <a href="#about">About</a>
       <a href="#value">Value Proposition</a>
       <a href="#artifacts">Artifacts</a>
+      <a href="#artifact2">AI Strategy</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -205,6 +401,222 @@
           <tr><td>Relevance</td><td>Directly relevant to roles applying AI to business operations — the exact intersection I'm aiming for as I move toward a career connecting AI capabilities to real business problems.</td></tr>
         </table>
         <a class="artifact-link" href="https://hanisha-varma.github.io/Daily-brew-assistant/" target="_blank">Try the assistant →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ARTIFACT 2 — Financial Services & Banking AI Strategy
+       ============================================================ -->
+  <section id="artifact2">
+    <div class="label">Artifact 02</div>
+
+    <!-- Hero Banner -->
+    <div class="a2-hero a2-fade">
+      <div class="a2-hero-badges">
+        <span class="a2-badge">🏦 Financial Services &amp; Banking</span>
+        <span class="a2-badge">🧠 Artificial Intelligence</span>
+        <span class="a2-badge">🤖 Machine Learning</span>
+        <span class="a2-badge">📊 Deep Learning</span>
+      </div>
+      <span class="tag">AI STRATEGY</span>
+      <h2 style="margin-top:16px;">Applying AI, ML &amp; Deep Learning to Transform Financial Services</h2>
+      <p class="a2-sub">An industry-level analysis exploring how banks and financial institutions can responsibly adopt intelligent technologies to modernize operations, strengthen risk management, and elevate the customer experience.</p>
+      <p class="a2-intro">This artifact presents a structured research and strategy project examining the financial services industry through an AI lens — from foundational concepts and architecture selection to a phased enterprise roadmap grounded in responsible AI principles.</p>
+    </div>
+
+    <!-- Project Overview -->
+    <div style="margin-top:56px;">
+      <div class="a2-block-title">Project Overview</div>
+      <p style="font-size:15.5px;color:var(--black);max-width:70ch;">
+        This project investigates how Artificial Intelligence, Machine Learning, and Deep Learning are reshaping
+        Financial Services and Banking — an industry built on trust, precision, and regulation. It examines where
+        AI creates the most measurable business value, how Machine Learning differs from Deep Learning in practical
+        banking applications, and what a realistic path to Enterprise AI adoption looks like. The analysis is
+        grounded in Responsible AI principles throughout, treating fairness, transparency, and governance not as an
+        afterthought but as a core requirement for any Business Transformation effort involving customer financial data.
+      </p>
+    </div>
+
+    <!-- Objective -->
+    <div style="margin-top:48px;">
+      <div class="a2-block-title">Objective</div>
+      <div class="a2-objective a2-fade">
+        <p>To research, analyze, and present a clear, executive-level framework for how financial institutions can
+        strategically evaluate and adopt Artificial Intelligence — balancing innovation, operational efficiency,
+        and risk — while maintaining responsible, compliant, and customer-centered practices.</p>
+      </div>
+    </div>
+
+    <!-- Process Timeline -->
+    <div style="margin-top:48px;">
+      <div class="a2-block-title">Interactive Process Timeline</div>
+      <div class="a2-timeline">
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">🔍</div>
+          <div class="a2-tl-content"><strong>Research</strong><span>Explored the current state of AI adoption across banking and financial services, identifying key trends, challenges, and opportunities.</span></div>
+        </div>
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">📊</div>
+          <div class="a2-tl-content"><strong>Data Analysis</strong><span>Examined how financial institutions collect, structure, and leverage data to fuel predictive models and business intelligence.</span></div>
+        </div>
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">🤖</div>
+          <div class="a2-tl-content"><strong>AI Applications</strong><span>Mapped real-world use cases including fraud detection, credit scoring, algorithmic trading, and personalized banking.</span></div>
+        </div>
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">🧠</div>
+          <div class="a2-tl-content"><strong>ML vs DL</strong><span>Compared Machine Learning and Deep Learning approaches, evaluating trade-offs in interpretability, data needs, and accuracy.</span></div>
+        </div>
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">🏗️</div>
+          <div class="a2-tl-content"><strong>Architecture Selection</strong><span>Defined criteria for choosing the right model architecture based on business objective, data availability, and regulatory constraints.</span></div>
+        </div>
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">🗺️</div>
+          <div class="a2-tl-content"><strong>Roadmap</strong><span>Outlined a phased Enterprise AI adoption roadmap, sequencing quick wins alongside longer-term transformation initiatives.</span></div>
+        </div>
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">🛡️</div>
+          <div class="a2-tl-content"><strong>Responsible AI</strong><span>Embedded fairness, transparency, and governance principles throughout, ensuring recommendations remain compliant and customer-centered.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technology Cards -->
+    <div style="margin-top:48px;">
+      <div class="a2-block-title">Technology &amp; Focus Areas</div>
+      <div class="a2-card-grid">
+        <div class="a2-card"><span class="a2-icon">🧠</span><h4>Artificial Intelligence</h4><p>Foundational concepts underpinning intelligent, adaptive financial systems.</p></div>
+        <div class="a2-card"><span class="a2-icon">🤖</span><h4>Machine Learning</h4><p>Predictive models trained on historical financial and behavioral data.</p></div>
+        <div class="a2-card"><span class="a2-icon">📊</span><h4>Data Analytics</h4><p>Turning raw transactional data into actionable business intelligence.</p></div>
+        <div class="a2-card"><span class="a2-icon">🏦</span><h4>Banking</h4><p>Domain-specific application across retail, commercial, and digital banking.</p></div>
+        <div class="a2-card"><span class="a2-icon">📈</span><h4>Business Strategy</h4><p>Aligning technical capability with measurable organizational outcomes.</p></div>
+        <div class="a2-card"><span class="a2-icon">🛡️</span><h4>Responsible AI</h4><p>Fairness, transparency, and governance built into every recommendation.</p></div>
+        <div class="a2-card"><span class="a2-icon">📚</span><h4>Research</h4><p>Industry analysis grounded in credible sources and current practice.</p></div>
+        <div class="a2-card"><span class="a2-icon">🎨</span><h4>PowerPoint</h4><p>Executive-level presentation design communicating complex ideas clearly.</p></div>
+      </div>
+    </div>
+
+    <!-- Business Value / Impact Cards -->
+    <div style="margin-top:48px;">
+      <div class="a2-block-title">Business Impact</div>
+      <div class="a2-card-grid">
+        <div class="a2-card"><span class="a2-icon">💰</span><h4>Business Value</h4><p>AI-driven insights that translate directly into measurable revenue and cost outcomes.</p></div>
+        <div class="a2-card"><span class="a2-icon">⚡</span><h4>Operational Efficiency</h4><p>Automating repetitive processes to reduce turnaround time and manual workload.</p></div>
+        <div class="a2-card"><span class="a2-icon">🔒</span><h4>Fraud Prevention</h4><p>Real-time anomaly detection that strengthens security and reduces financial loss.</p></div>
+        <div class="a2-card"><span class="a2-icon">😊</span><h4>Customer Experience</h4><p>Personalized, responsive service that builds trust and long-term loyalty.</p></div>
+        <div class="a2-card"><span class="a2-icon">📈</span><h4>Enterprise Growth</h4><p>Scalable AI foundations that support sustained institutional expansion.</p></div>
+      </div>
+    </div>
+
+    <!-- Presentation Gallery -->
+    <div style="margin-top:56px;">
+      <div class="a2-block-title">Presentation Gallery</div>
+
+      <div class="a2-gallery-row">
+        <div class="a2-gallery-img"><img src="images/slide1.png" alt="Industry Overview slide" loading="lazy"></div>
+        <div class="a2-gallery-text">
+          <span class="a2-icon">🏦</span>
+          <h4>Industry Overview</h4>
+          <p>Sets the stage by framing the financial services sector as one defined by regulation, trust, and razor-thin margins for error — establishing why any AI initiative here must be evaluated differently than in less regulated industries.</p>
+        </div>
+      </div>
+
+      <div class="a2-gallery-row reverse">
+        <div class="a2-gallery-img"><img src="images/slide2.png" alt="AI Transformation slide" loading="lazy"></div>
+        <div class="a2-gallery-text">
+          <span class="a2-icon">🚀</span>
+          <h4>AI Transformation</h4>
+          <p>Traces how artificial intelligence is shifting banking from reactive, manual operations toward proactive, data-informed decision-making across risk, service, and product design.</p>
+        </div>
+      </div>
+
+      <div class="a2-gallery-row">
+        <div class="a2-gallery-img"><img src="images/slide3.png" alt="Machine Learning vs Deep Learning slide" loading="lazy"></div>
+        <div class="a2-gallery-text">
+          <span class="a2-icon">🧠</span>
+          <h4>Machine Learning vs. Deep Learning</h4>
+          <p>Breaks down the practical distinction between the two approaches — when a simpler, interpretable ML model is the right business choice, and when the complexity of deep learning is actually justified.</p>
+        </div>
+      </div>
+
+      <div class="a2-gallery-row reverse">
+        <div class="a2-gallery-img"><img src="images/slide4.png" alt="Decision Framework slide" loading="lazy"></div>
+        <div class="a2-gallery-text">
+          <span class="a2-icon">🧭</span>
+          <h4>Decision Framework</h4>
+          <p>Presents a structured framework for evaluating AI investments by weighing data readiness, regulatory exposure, and expected business return before committing resources.</p>
+        </div>
+      </div>
+
+      <div class="a2-gallery-row">
+        <div class="a2-gallery-img"><img src="images/slide5.png" alt="Enterprise AI Roadmap slide" loading="lazy"></div>
+        <div class="a2-gallery-text">
+          <span class="a2-icon">🗺️</span>
+          <h4>Enterprise AI Roadmap</h4>
+          <p>Lays out a phased adoption path — from pilot programs to full-scale integration — sequenced to deliver early wins while building toward long-term transformation.</p>
+        </div>
+      </div>
+
+      <div class="a2-gallery-row reverse">
+        <div class="a2-gallery-img"><img src="images/slide6.png" alt="Responsible AI slide" loading="lazy"></div>
+        <div class="a2-gallery-text">
+          <span class="a2-icon">🛡️</span>
+          <h4>Responsible AI</h4>
+          <p>Addresses the ethical backbone of the strategy: fairness in credit and lending models, explainability for regulators, and safeguards against bias in customer-facing systems.</p>
+        </div>
+      </div>
+
+      <div class="a2-gallery-row">
+        <div class="a2-gallery-img"><img src="images/slide7.png" alt="Conclusion slide" loading="lazy"></div>
+        <div class="a2-gallery-text">
+          <span class="a2-icon">✅</span>
+          <h4>Conclusion</h4>
+          <p>Closes with a synthesis of findings, reinforcing that sustainable AI adoption in banking depends as much on governance and trust as it does on technical performance.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Learnings -->
+    <div style="margin-top:56px;">
+      <div class="a2-block-title">Key Learnings</div>
+      <div class="a2-learnings a2-fade">
+        <ul>
+          <li><strong>Business Strategy —</strong> Technical capability only matters when it's tied to a measurable business outcome.</li>
+          <li><strong>AI Fundamentals —</strong> A working grasp of how AI, ML, and Deep Learning differ is essential to making sound architecture decisions.</li>
+          <li><strong>Communication —</strong> Translating technical findings into executive-level language is as important as the analysis itself.</li>
+          <li><strong>Responsible AI —</strong> Fairness and transparency must be designed in from the start, not retrofitted after deployment.</li>
+          <li><strong>Enterprise Adoption —</strong> Successful AI rollouts are phased, change-managed, and grounded in realistic organizational readiness.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Skills Demonstrated -->
+    <div style="margin-top:56px;">
+      <div class="a2-block-title">Skills Demonstrated</div>
+      <div class="a2-skills">
+        <span class="a2-skill-badge">Artificial Intelligence</span>
+        <span class="a2-skill-badge">Machine Learning</span>
+        <span class="a2-skill-badge">Deep Learning</span>
+        <span class="a2-skill-badge">Data Analytics</span>
+        <span class="a2-skill-badge">Business Analysis</span>
+        <span class="a2-skill-badge">Strategic Thinking</span>
+        <span class="a2-skill-badge">Presentation Design</span>
+        <span class="a2-skill-badge">Technical Communication</span>
+        <span class="a2-skill-badge">Responsible AI</span>
+        <span class="a2-skill-badge">Research</span>
+        <span class="a2-skill-badge">Banking Domain</span>
+        <span class="a2-skill-badge">Critical Thinking</span>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div style="margin-top:48px;">
+      <div class="a2-actions">
+        <a class="a2-btn a2-btn-primary" href="#" target="_blank">📑 View Presentation</a>
+        <a class="a2-btn a2-btn-outline" href="#" download>⬇ Download PPT</a>
+        <a class="a2-btn a2-btn-outline" href="#" target="_blank">💻 GitHub Repository</a>
       </div>
     </div>
   </section>
