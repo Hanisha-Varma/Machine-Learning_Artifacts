@@ -271,6 +271,15 @@
   .a2-gallery-row:last-child{border-bottom:none}
   .a2-gallery-row.reverse .a2-gallery-img{order:2}
   .a2-gallery-row.reverse .a2-gallery-text{order:1}
+  .a2-gallery-intro{
+    border-radius:var(--radius);
+    overflow:hidden;
+    border:1px solid var(--border);
+    box-shadow:0 18px 40px -20px rgba(139,94,50,0.45);
+    margin-bottom:36px;
+    transition:transform .35s ease;
+  }
+  .a2-gallery-intro img{ display:block; width:100%; height:auto; }
   .a2-gallery-img{
     border-radius:var(--radius);
     overflow:hidden;
@@ -355,7 +364,6 @@
       <a href="#about">About</a>
       <a href="#value">Value Proposition</a>
       <a href="#artifacts">Artifacts</a>
-      <a href="#artifact2">AI Strategy</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -403,13 +411,11 @@
         <a class="artifact-link" href="https://hanisha-varma.github.io/Daily-brew-assistant/" target="_blank">Try the assistant →</a>
       </div>
     </div>
-  </section>
 
-  <!-- ============================================================
-       ARTIFACT 2 — Financial Services & Banking AI Strategy
-       ============================================================ -->
-  <section id="artifact2">
-    <div class="label">Artifact 02</div>
+    <!-- ============================================================
+         ARTIFACT 2 — Financial Services & Banking AI Strategy
+         ============================================================ -->
+    <div class="label" style="margin-top:64px;">Artifact 02</div>
 
     <!-- Hero Banner -->
     <div class="a2-hero a2-fade">
@@ -514,8 +520,13 @@
     <div style="margin-top:56px;">
       <div class="a2-block-title">Presentation Gallery</div>
 
+      <!-- Intro / Title Slide (no caption) -->
+      <div class="a2-gallery-intro">
+        <img src="images/slide1.png" alt="Presentation title slide" loading="lazy">
+      </div>
+
       <div class="a2-gallery-row">
-        <div class="a2-gallery-img"><img src="images/slide1.png" alt="Industry Overview slide" loading="lazy"></div>
+        <div class="a2-gallery-img"><img src="images/slide2.png" alt="Industry Overview slide" loading="lazy"></div>
         <div class="a2-gallery-text">
           <span class="a2-icon">🏦</span>
           <h4>Industry Overview</h4>
@@ -524,7 +535,7 @@
       </div>
 
       <div class="a2-gallery-row reverse">
-        <div class="a2-gallery-img"><img src="images/slide2.png" alt="AI Transformation slide" loading="lazy"></div>
+        <div class="a2-gallery-img"><img src="images/slide3.png" alt="AI Transformation slide" loading="lazy"></div>
         <div class="a2-gallery-text">
           <span class="a2-icon">🚀</span>
           <h4>AI Transformation</h4>
@@ -533,7 +544,7 @@
       </div>
 
       <div class="a2-gallery-row">
-        <div class="a2-gallery-img"><img src="images/slide3.png" alt="Machine Learning vs Deep Learning slide" loading="lazy"></div>
+        <div class="a2-gallery-img"><img src="images/slide4.png" alt="Machine Learning vs Deep Learning slide" loading="lazy"></div>
         <div class="a2-gallery-text">
           <span class="a2-icon">🧠</span>
           <h4>Machine Learning vs. Deep Learning</h4>
@@ -542,7 +553,7 @@
       </div>
 
       <div class="a2-gallery-row reverse">
-        <div class="a2-gallery-img"><img src="images/slide4.png" alt="Decision Framework slide" loading="lazy"></div>
+        <div class="a2-gallery-img"><img src="images/slide5.png" alt="Decision Framework slide" loading="lazy"></div>
         <div class="a2-gallery-text">
           <span class="a2-icon">🧭</span>
           <h4>Decision Framework</h4>
@@ -551,7 +562,7 @@
       </div>
 
       <div class="a2-gallery-row">
-        <div class="a2-gallery-img"><img src="images/slide5.png" alt="Enterprise AI Roadmap slide" loading="lazy"></div>
+        <div class="a2-gallery-img"><img src="images/slide6.png" alt="Enterprise AI Roadmap slide" loading="lazy"></div>
         <div class="a2-gallery-text">
           <span class="a2-icon">🗺️</span>
           <h4>Enterprise AI Roadmap</h4>
@@ -560,7 +571,7 @@
       </div>
 
       <div class="a2-gallery-row reverse">
-        <div class="a2-gallery-img"><img src="images/slide6.png" alt="Responsible AI slide" loading="lazy"></div>
+        <div class="a2-gallery-img"><img src="images/slide7.png" alt="Responsible AI slide" loading="lazy"></div>
         <div class="a2-gallery-text">
           <span class="a2-icon">🛡️</span>
           <h4>Responsible AI</h4>
@@ -569,7 +580,7 @@
       </div>
 
       <div class="a2-gallery-row">
-        <div class="a2-gallery-img"><img src="images/slide7.png" alt="Conclusion slide" loading="lazy"></div>
+        <div class="a2-gallery-img"><img src="images/slide8.png" alt="Conclusion slide" loading="lazy"></div>
         <div class="a2-gallery-text">
           <span class="a2-icon">✅</span>
           <h4>Conclusion</h4>
@@ -614,9 +625,8 @@
     <!-- Action Buttons -->
     <div style="margin-top:48px;">
       <div class="a2-actions">
-        <a class="a2-btn a2-btn-primary" href="#" target="_blank">📑 View Presentation</a>
-        <a class="a2-btn a2-btn-outline" href="#" download>⬇ Download PPT</a>
-        <a class="a2-btn a2-btn-outline" href="#" target="_blank">💻 GitHub Repository</a>
+        <a class="a2-btn a2-btn-primary" href="https://github.com/Hanisha-Varma/Machine-Learning_Artifacts/blob/main/Financial%20Services%20and%20Banking_AI%20Analysis.pptx" target="_blank">⬇ Download PPT</a>
+        <a class="a2-btn a2-btn-outline" href="https://github.com/Hanisha-Varma/Machine-Learning_Artifacts/tree/main" target="_blank">💻 GitHub Repository</a>
       </div>
     </div>
   </section>
