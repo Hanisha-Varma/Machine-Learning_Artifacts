@@ -351,6 +351,62 @@
     .a2-objective{padding:28px 24px}
     .a2-learnings{padding:28px 24px}
   }
+
+  /* ============================================================
+     ARTIFACT 4 — AI/ML Data Challenge Scenarios
+     Only NEW classes below; everything else reuses a2-* above.
+     ============================================================ */
+
+  /* Scenario cards (2-col grid, bullet list + highlighted takeaway) */
+  .a4-scenario-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;
+  }
+  .a4-scenario-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:30px 28px;
+    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  }
+  .a4-scenario-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 16px 30px -18px rgba(139,94,50,0.5);
+    border-color:var(--caramel);
+  }
+  .a4-scenario-card .a4-icon{font-size:28px;margin-bottom:12px;display:block}
+  .a4-scenario-card h4{font-family:'Fraunces',serif;font-size:18px;font-weight:600;margin-bottom:14px;color:var(--ink)}
+  .a4-scenario-card ul{margin:0 0 20px;padding-left:20px}
+  .a4-scenario-card li{font-size:13.5px;color:#5C4433;margin-bottom:6px;line-height:1.55}
+  .a4-scenario-card li:last-child{margin-bottom:0}
+  .a4-takeaway{
+    background:var(--vanilla-soft);
+    border-left:3px solid var(--caramel);
+    border-radius:8px;
+    padding:12px 16px;
+    font-size:13px;color:var(--ink);
+    display:flex;gap:8px;align-items:flex-start;
+  }
+  .a4-takeaway strong{color:var(--caramel-deep);flex-shrink:0}
+
+  /* Learning outcome list (icon + label) */
+  .a4-outcomes{display:flex;flex-wrap:wrap;gap:14px}
+  .a4-outcome-item{
+    display:flex;align-items:center;gap:9px;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:999px;
+    padding:10px 18px;
+    font-size:13.5px;font-weight:600;color:var(--ink);
+    transition:transform .2s ease, border-color .2s ease;
+  }
+  .a4-outcome-item:hover{transform:translateY(-3px); border-color:var(--caramel)}
+
+  /* Gallery subtitle under block title */
+  .a2-block-subtitle{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;color:var(--caramel-deep);text-transform:uppercase;letter-spacing:0.08em;
+    margin:-12px 0 22px;
+  }
 </style>
 </head>
 <body>
@@ -875,6 +931,255 @@
         from the very first decision. Overall, the exercise sharpened both my technical grounding and my ability to
         communicate it clearly under pressure — a combination I see as central to the kind of AI career I'm working
         toward.
+        </p>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div style="margin-top:48px;">
+      <div class="a2-actions">
+        <a class="a2-btn a2-btn-outline" href="https://github.com/Hanisha-Varma/Machine-Learning_Artifacts/tree/main" target="_blank">💻 GitHub Repository</a>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         ARTIFACT 4 — AI/ML Data Challenge Scenarios
+         ============================================================ -->
+    <div class="label" style="margin-top:64px;">Artifact 04</div>
+
+    <!-- Hero Banner -->
+    <div class="a2-hero a2-fade">
+      <div class="a2-hero-badges">
+        <span class="a2-badge">📊 Missing Data</span>
+        <span class="a2-badge">⚖️ Class Imbalance</span>
+        <span class="a2-badge">📈 Data Drift</span>
+        <span class="a2-badge">🔍 Concept Drift</span>
+      </div>
+      <span class="tag">MACHINE LEARNING</span>
+      <h2 style="margin-top:16px;">AI/ML Data Challenge Scenarios</h2>
+      <p class="a2-sub">Production Machine Learning Decision Making — working through real-world data challenges the way an AI Developer would inside a live enterprise system.</p>
+      <p class="a2-intro">This artifact demonstrates how I approached three real-world production machine learning challenges using structured reasoning rather than memorizing algorithms. The exercise reflects how AI Developers and Machine Learning Engineers actually troubleshoot problems in enterprise environments — starting from business context, not just technical metrics.</p>
+    </div>
+
+    <!-- Objective -->
+    <div style="margin-top:56px;">
+      <div class="a2-block-title">Objective</div>
+      <div class="a2-objective a2-fade">
+        <p>To evaluate my ability to think through production ML challenges involving missing data, class imbalance,
+        data drift, and concept drift — using both business context and machine learning best practices rather than
+        applying textbook solutions in isolation.</p>
+      </div>
+    </div>
+
+    <!-- Scenario Cards -->
+    <div style="margin-top:48px;">
+      <div class="a2-block-title">Scenario Walkthroughs</div>
+      <div class="a4-scenario-grid">
+
+        <div class="a4-scenario-card">
+          <span class="a4-icon">📊</span>
+          <h4>Handling Missing Data</h4>
+          <ul>
+            <li>Investigated why values were missing before taking action</li>
+            <li>Identified patterns in the missing data rather than assuming randomness</li>
+            <li>Avoided the shortcut of dropping 20% of records</li>
+            <li>Used indicator features to preserve signal from missingness itself</li>
+            <li>Performed intelligent, context-aware imputations</li>
+            <li>Validated that imputed values still made business sense</li>
+          </ul>
+          <div class="a4-takeaway"><strong>Takeaway:</strong> Good machine learning starts with understanding why data is missing before trying to fix it.</div>
+        </div>
+
+        <div class="a4-scenario-card">
+          <span class="a4-icon">⚖️</span>
+          <h4>Imbalanced Fraud Detection</h4>
+          <ul>
+            <li>Scenario: 500,000 transactions, only 0.8% fraudulent</li>
+            <li>Recognized that accuracy alone would be misleading at this ratio</li>
+            <li>Evaluated using Precision, Recall, F1 Score, and PR-AUC</li>
+            <li>Applied SMOTE and class weighting to rebalance learning signal</li>
+            <li>Tuned decision thresholds against real business cost</li>
+            <li>Weighed the cost of false negatives against false positives</li>
+          </ul>
+          <div class="a4-takeaway"><strong>Takeaway:</strong> Machine learning should optimize business outcomes — not just accuracy.</div>
+        </div>
+
+        <div class="a4-scenario-card">
+          <span class="a4-icon">📈</span>
+          <h4>Data Drift &amp; Concept Drift</h4>
+          <ul>
+            <li>Diagnosed feature distribution changes over time</li>
+            <li>Identified shifts in the relationship between features and outcomes</li>
+            <li>Flagged calibration issues surfacing in live predictions</li>
+            <li>Traced drift back to external business and market changes</li>
+            <li>Designed monitoring dashboards to catch drift early</li>
+            <li>Defined a retraining and feature engineering strategy</li>
+          </ul>
+          <div class="a4-takeaway"><strong>Takeaway:</strong> Production AI models require continuous monitoring because data evolves over time.</div>
+        </div>
+
+        <div class="a4-scenario-card">
+          <span class="a4-icon">🏢</span>
+          <h4>Enterprise Perspective</h4>
+          <ul>
+            <li>Connected prior enterprise analytics experience to ML thinking</li>
+            <li>Applied root cause analysis before proposing a fix</li>
+            <li>Enforced data validation and business rules at every stage</li>
+            <li>Treated monitoring and governance as ongoing responsibilities</li>
+            <li>Framed every technical decision around continuous improvement</li>
+          </ul>
+          <div class="a4-takeaway"><strong>Takeaway:</strong> Enterprise AI succeeds when technical decisions align with business objectives.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Presentation Gallery -->
+    <div style="margin-top:56px;">
+      <div class="a2-block-title">Presentation Gallery</div>
+      <div class="a2-block-subtitle">Assignment Presentation</div>
+
+      <div class="a2-gallery-row">
+        <div class="a2-gallery-img"><img src="images/scenario1.png" alt="Scenario introduction slide" loading="lazy"></div>
+        <div class="a2-gallery-text">
+          <span class="a2-icon">👋</span>
+          <h4>Scenario Introduction</h4>
+          <p>Frames the three production ML challenges tackled in this assignment and sets up the structured reasoning approach used throughout.</p>
+        </div>
+      </div>
+
+      <div class="a2-gallery-row reverse">
+        <div class="a2-gallery-img"><img src="images/scenario2.png" alt="Handling missing data slide" loading="lazy"></div>
+        <div class="a2-gallery-text">
+          <span class="a2-icon">📊</span>
+          <h4>Handling Missing Data</h4>
+          <p>Walks through the investigation into why data was missing and the reasoning behind choosing indicator features and imputation over simply dropping records.</p>
+        </div>
+      </div>
+
+      <div class="a2-gallery-row">
+        <div class="a2-gallery-img"><img src="images/scenario3.png" alt="Fraud detection strategy slide" loading="lazy"></div>
+        <div class="a2-gallery-text">
+          <span class="a2-icon">⚖️</span>
+          <h4>Fraud Detection Strategy</h4>
+          <p>Details the approach to the 0.8% fraud-rate scenario, covering evaluation metrics, class rebalancing, and threshold tuning against business cost.</p>
+        </div>
+      </div>
+
+      <div class="a2-gallery-row reverse">
+        <div class="a2-gallery-img"><img src="images/scenario4.png" alt="Monitoring data drift slide" loading="lazy"></div>
+        <div class="a2-gallery-text">
+          <span class="a2-icon">📈</span>
+          <h4>Monitoring Data Drift</h4>
+          <p>Explains how feature and concept drift were diagnosed, and the monitoring and retraining strategy proposed to keep the model reliable in production.</p>
+        </div>
+      </div>
+
+      <div class="a2-gallery-row">
+        <div class="a2-gallery-img"><img src="images/scenario5.png" alt="Production ML decision making slide" loading="lazy"></div>
+        <div class="a2-gallery-text">
+          <span class="a2-icon">🏢</span>
+          <h4>Production ML Decision Making</h4>
+          <p>Connects the three scenarios back to enterprise decision-making, showing how technical choices were weighed against business risk and governance.</p>
+        </div>
+      </div>
+
+      <div class="a2-gallery-row reverse">
+        <div class="a2-gallery-img"><img src="images/scenario6.png" alt="AI coach feedback slide" loading="lazy"></div>
+        <div class="a2-gallery-text">
+          <span class="a2-icon">🤖</span>
+          <h4>AI Coach Feedback</h4>
+          <p>Captures the feedback received during the exercise and how it was used to refine and validate the reasoning behind each decision.</p>
+        </div>
+      </div>
+
+      <div class="a2-gallery-row">
+        <div class="a2-gallery-img"><img src="images/scenario7.png" alt="Key learnings slide" loading="lazy"></div>
+        <div class="a2-gallery-text">
+          <span class="a2-icon">💡</span>
+          <h4>Key Learnings</h4>
+          <p>Summarizes the core insights drawn from working through missing data, class imbalance, and drift scenarios in a single cohesive view.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Professional Reflection -->
+    <div style="margin-top:56px;">
+      <div class="a2-block-title">Professional Reflection</div>
+      <div class="a2-objective a2-fade">
+        <p style="font-size:15px;font-family:'Inter',sans-serif;font-weight:400;line-height:1.75;">
+        This activity strengthened my understanding that successful machine learning extends far beyond selecting
+        algorithms. Real-world AI systems require thoughtful data preparation, continuous monitoring, ethical
+        decision-making, and alignment with business objectives. Working through these scenarios reinforced the
+        importance of approaching production challenges systematically while balancing technical performance with
+        practical business impact.
+        </p>
+      </div>
+    </div>
+
+    <!-- Skills Demonstrated -->
+    <div style="margin-top:56px;">
+      <div class="a2-block-title">Skills Demonstrated</div>
+      <div class="a2-skills">
+        <span class="a2-skill-badge">Machine Learning</span>
+        <span class="a2-skill-badge">Data Cleaning</span>
+        <span class="a2-skill-badge">Feature Engineering</span>
+        <span class="a2-skill-badge">Missing Data Handling</span>
+        <span class="a2-skill-badge">Fraud Detection</span>
+        <span class="a2-skill-badge">SMOTE</span>
+        <span class="a2-skill-badge">Precision</span>
+        <span class="a2-skill-badge">Recall</span>
+        <span class="a2-skill-badge">PR-AUC</span>
+        <span class="a2-skill-badge">Threshold Tuning</span>
+        <span class="a2-skill-badge">Cross Validation</span>
+        <span class="a2-skill-badge">Model Monitoring</span>
+        <span class="a2-skill-badge">Data Drift</span>
+        <span class="a2-skill-badge">Concept Drift</span>
+        <span class="a2-skill-badge">Production ML</span>
+        <span class="a2-skill-badge">Business Analytics</span>
+        <span class="a2-skill-badge">Critical Thinking</span>
+        <span class="a2-skill-badge">Responsible AI</span>
+        <span class="a2-skill-badge">MLOps Awareness</span>
+        <span class="a2-skill-badge">Enterprise Analytics</span>
+      </div>
+    </div>
+
+    <!-- Technologies Used -->
+    <div style="margin-top:56px;">
+      <div class="a2-block-title">Technologies Used</div>
+      <div class="a2-skills">
+        <span class="a2-skill-badge">🐍 Python</span>
+        <span class="a2-skill-badge">🔬 Scikit-learn</span>
+        <span class="a2-skill-badge">🧠 Machine Learning Concepts</span>
+        <span class="a2-skill-badge">📊 Data Analytics</span>
+        <span class="a2-skill-badge">🤖 AI Problem Solving</span>
+        <span class="a2-skill-badge">📈 Business Intelligence</span>
+        <span class="a2-skill-badge">🏢 Enterprise Analytics</span>
+      </div>
+    </div>
+
+    <!-- Learning Outcomes -->
+    <div style="margin-top:56px;">
+      <div class="a2-block-title">Learning Outcomes</div>
+      <div class="a4-outcomes">
+        <div class="a4-outcome-item">✅ Applied ML reasoning</div>
+        <div class="a4-outcome-item">📊 Data preprocessing</div>
+        <div class="a4-outcome-item">⚖️ Model evaluation</div>
+        <div class="a4-outcome-item">📈 Production monitoring</div>
+        <div class="a4-outcome-item">🔍 Critical thinking</div>
+        <div class="a4-outcome-item">🏢 Business-first AI</div>
+      </div>
+    </div>
+
+    <!-- Why This Artifact Matters -->
+    <div style="margin-top:56px;">
+      <div class="a2-block-title">Why This Artifact Matters</div>
+      <div class="a2-objective a2-fade">
+        <p style="font-size:15px;font-family:'Inter',sans-serif;font-weight:400;line-height:1.75;">
+        This artifact demonstrates my ability to think like an AI Developer rather than simply applying algorithms.
+        It showcases structured problem solving, production thinking, evaluation metrics, enterprise decision
+        making, and business-oriented AI reasoning — all essential skills required for Machine Learning Engineer,
+        AI Developer, Generative AI Engineer, and Applied AI roles.
         </p>
       </div>
     </div>
