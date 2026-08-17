@@ -407,6 +407,41 @@
     font-size:12px;color:var(--caramel-deep);text-transform:uppercase;letter-spacing:0.08em;
     margin:-12px 0 22px;
   }
+
+  /* ============================================================
+     ARTIFACT 5 — Bias, Opacity & Accountability (AI Recruiting)
+     Only NEW classes below; everything else reuses a2-*/a4-* above.
+     ============================================================ */
+
+  /* Before → After reflection */
+  .a5-baf-row{
+    display:grid;grid-template-columns:1fr 56px 1fr;
+    gap:0;align-items:stretch;
+  }
+  .a5-baf-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:28px 26px;
+  }
+  .a5-baf-card.before{border-left:3px solid var(--muted)}
+  .a5-baf-card.after{border-left:3px solid var(--caramel)}
+  .a5-baf-label{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;
+    color:var(--caramel-deep);margin-bottom:10px;font-weight:600;
+  }
+  .a5-baf-card p{font-family:'Fraunces',serif;font-size:16.5px;font-weight:500;line-height:1.5;margin:0;color:var(--ink)}
+  .a5-baf-arrow{display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--caramel)}
+  @media (max-width:680px){
+    .a5-baf-row{grid-template-columns:1fr;gap:14px}
+    .a5-baf-arrow{transform:rotate(90deg)}
+  }
+
+  /* Loop caption under the responsible-AI control-loop timeline */
+  .a5-loop-note{
+    margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--caramel-deep);
+    display:flex;align-items:center;gap:8px;
+  }
 </style>
 </head>
 <body>
@@ -1195,6 +1230,297 @@
         making, and business-oriented AI reasoning — all essential skills required for Machine Learning Engineer,
         AI Developer, Generative AI Engineer, and Applied AI roles.
         </p>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div style="margin-top:48px;">
+      <div class="a2-actions">
+        <a class="a2-btn a2-btn-outline" href="https://github.com/Hanisha-Varma/Machine-Learning_Artifacts/tree/main" target="_blank">💻 GitHub Repository</a>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         ARTIFACT 5 — Bias, Opacity & Accountability
+         Amazon's AI Recruiting Tool — Responsible AI Case Study
+         ============================================================ -->
+    <div class="label" style="margin-top:64px;" id="artifact5">Artifact 05</div>
+
+    <!-- Hero Banner -->
+    <div class="a2-hero a2-fade">
+      <div class="a2-hero-badges">
+        <span class="a2-badge">⚖️ Responsible AI</span>
+        <span class="a2-badge">🧑‍💻 AI Recruiting</span>
+        <span class="a2-badge">📊 Model Evaluation</span>
+        <span class="a2-badge">🛡️ AI Governance</span>
+      </div>
+      <span class="tag">RESPONSIBLE AI</span>
+      <h2 style="margin-top:16px;">Bias, Opacity &amp; Accountability</h2>
+      <p class="a2-sub">Amazon's AI Recruiting Tool — A Case Study in Responsible Machine Learning, tracing how data, model, decision, and governance interact in a high-stakes hiring system.</p>
+      <p class="a2-intro">When historical data becomes a model, historical bias can become automated. This artifact critically analyzes Amazon's experimental AI recruiting tool, developed between 2014 and 2017 and reported publicly in October 2018, to examine how bias moves from training data into real-world consequences.</p>
+    </div>
+
+    <!-- Case Study Snapshot -->
+    <div style="margin-top:56px;">
+      <div class="a2-block-title">Case Study Snapshot</div>
+      <div class="a2-card-grid">
+        <div class="a2-card"><span class="a2-icon">📅</span><h4>Development</h4><p>2014–2017, built to score candidates using roughly a decade of historical résumés.</p></div>
+        <div class="a2-card"><span class="a2-icon">👥</span><h4>Domain</h4><p>AI Recruiting / Hiring — screening technical job applicants at scale.</p></div>
+        <div class="a2-card"><span class="a2-icon">⭐</span><h4>Output</h4><p>Candidates were scored on a 1–5 star scale based on learned résumé patterns.</p></div>
+        <div class="a2-card"><span class="a2-icon">⚠️</span><h4>Core Risk</h4><p>Gender-related bias, publicly reported in 2018; the project was ultimately disbanded.</p></div>
+      </div>
+    </div>
+
+    <!-- Case Study Overview -->
+    <div style="margin-top:48px;">
+      <div class="a2-block-title">Case Study Overview</div>
+      <p style="font-size:15.5px;color:var(--black);max-width:70ch;">
+        This analysis examines Amazon's experimental AI recruiting tool, developed between 2014 and 2017 and reported
+        publicly in October 2018 (Dastin, 2018). The system scored job candidates from one to five stars using patterns
+        learned from résumés submitted over the prior decade. Because the technology industry has historically been
+        male dominated, the majority of those résumés came from men, and the model learned patterns that favored male
+        candidates — penalizing résumés containing the word "women's" and downgrading graduates of two all-women's
+        colleges (Dastin, 2018). Engineers edited the program to neutralize the specific terms they found, but they
+        could not guarantee the system would not discover other proxies for gender. Amazon ultimately disbanded the
+        project. This is not simply a story about "AI bias" — it is a case study in how <strong>data, model, decision,
+        and governance</strong> interact to create serious consequences when AI is used in high-stakes environments
+        such as hiring.
+      </p>
+    </div>
+
+    <!-- AI Bias Flow Visual -->
+    <div style="margin-top:48px;">
+      <div class="a2-block-title">How Bias Entered the System</div>
+      <div class="a2-timeline">
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">📄</div>
+          <div class="a2-tl-content"><strong>Historical Hiring Data</strong><span>A decade of résumés was used as the training foundation, reflecting who had actually been hired before.</span></div>
+        </div>
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">📉</div>
+          <div class="a2-tl-content"><strong>Skewed Patterns</strong><span>Because the industry had been male dominated, the data itself carried an imbalance before any model was trained.</span></div>
+        </div>
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">🧠</div>
+          <div class="a2-tl-content"><strong>Model Learns Patterns</strong><span>The system learned statistical correlations from the data, including ones tied to gender rather than qualification.</span></div>
+        </div>
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">🔎</div>
+          <div class="a2-tl-content"><strong>Proxy Features</strong><span>Word choice, activities, and colleges attended could stand in for gender, even after obvious terms were removed.</span></div>
+        </div>
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">⭐</div>
+          <div class="a2-tl-content"><strong>Biased Candidate Scores</strong><span>Résumés containing terms like "women's" were penalized, and graduates of two all-women's colleges were downgraded.</span></div>
+        </div>
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">🚫</div>
+          <div class="a2-tl-content"><strong>Real-World Consequences</strong><span>Qualified candidates risked being screened out at scale, ultimately leading Amazon to disband the project.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Three-Pillar Analysis -->
+    <div style="margin-top:56px;">
+      <div class="a2-block-title">Three-Pillar Analysis</div>
+      <div class="a4-scenario-grid">
+
+        <div class="a4-scenario-card">
+          <span class="a4-icon">⚠️</span>
+          <h4>01 — Training Data Bias</h4>
+          <p style="font-size:13.5px;color:#5C4433;margin:-6px 0 14px;line-height:1.6;">
+          <em>"Historical patterns can become algorithmic preferences."</em> The tool was never explicitly programmed
+          to discriminate, yet it discriminated by learning statistical patterns embedded in a decade of hiring data.
+          Removing obvious gendered words was only a cosmetic fix — word choice, activities, and colleges can act as
+          proxies, so bias mitigation has to examine correlated features, not just keywords.
+          </p>
+          <ul>
+            <li>Statistical fairness testing</li>
+            <li>Counterfactual testing</li>
+            <li>Disparate-impact analysis</li>
+            <li>Rebalanced training data</li>
+            <li>Fairness testing at every retraining cycle</li>
+          </ul>
+          <div class="a4-takeaway"><strong>Takeaway:</strong> Removing one biased feature does not remove the bias hidden in the surrounding data.</div>
+        </div>
+
+        <div class="a4-scenario-card">
+          <span class="a4-icon">🔍</span>
+          <h4>02 — Opacity &amp; Recourse</h4>
+          <p style="font-size:13.5px;color:#5C4433;margin:-6px 0 14px;line-height:1.6;">
+          <em>"If people cannot understand or challenge an automated decision, accountability becomes difficult."</em>
+          Job applicants had no meaningful way to understand or challenge the algorithmic assessment, and engineers
+          reportedly struggled to fully explain why the system favored certain résumés. When a system influences a
+          hiring decision but its reasoning can't be reviewed, the real question becomes who is accountable when it
+          produces an unfair outcome.
+          </p>
+          <ul>
+            <li>Disclosure when automated tools are used</li>
+            <li>Human review before consequential decisions</li>
+            <li>Explainable AI techniques</li>
+            <li>Documentation of model limitations</li>
+            <li>Applicant recourse and appeal mechanisms</li>
+          </ul>
+          <div class="a4-takeaway"><strong>Takeaway:</strong> Explainability isn't a nice-to-have — it's what makes accountability possible.</div>
+        </div>
+
+        <div class="a4-scenario-card">
+          <span class="a4-icon">🛡️</span>
+          <h4>03 — Governance Gap</h4>
+          <p style="font-size:13.5px;color:#5C4433;margin:-6px 0 14px;line-height:1.6;">
+          <em>"High-stakes AI needs governance before deployment — not after failure."</em> The tool operated for
+          roughly three years before its flaws were caught and publicly reported. A technically capable team can still
+          miss systemic risks without independent controls, auditing processes, and clear accountability — reframing
+          the incident as a governance failure as much as a technical one.
+          </p>
+          <ul>
+            <li>Independent bias audits</li>
+            <li>Pre-deployment ethics review</li>
+            <li>Continuous post-deployment monitoring</li>
+            <li>Clearly defined ownership and accountability</li>
+            <li>Authority to pause or stop high-risk AI systems</li>
+          </ul>
+          <div class="a4-takeaway"><strong>Takeaway:</strong> Responsible AI is not a final checklist — it's an ongoing governance process.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Before → After Reflection -->
+    <div style="margin-top:56px;">
+      <div class="a2-block-title">How My Thinking Changed</div>
+      <div class="a5-baf-row a2-fade">
+        <div class="a5-baf-card before">
+          <div class="a5-baf-label">Before</div>
+          <p>"I initially assumed AI bias was mainly a data-cleaning problem."</p>
+        </div>
+        <div class="a5-baf-arrow">→</div>
+        <div class="a5-baf-card after">
+          <div class="a5-baf-label">After</div>
+          <p>"I now see fairness as an ongoing engineering, monitoring, and governance responsibility."</p>
+        </div>
+      </div>
+      <p style="font-size:15px;color:var(--black);max-width:70ch;margin-top:24px;">
+        Working through Amazon's case changed my assumption that cleaner data alone could eliminate AI bias. Even
+        after obvious gender-related markers were removed, the model could potentially identify other proxies. I also
+        realized that the deeper issue was not purely technical — organizational oversight, transparency, human
+        review, and governance are equally important. Going forward, I would treat fairness as a continuous
+        responsibility rather than a one-time correction, and would advocate for transparency, human review, and
+        independent auditing from the earliest design stages.
+      </p>
+    </div>
+
+    <!-- Responsible AI Control Loop -->
+    <div style="margin-top:56px;">
+      <div class="a2-block-title">Responsible AI Control Loop</div>
+      <div class="a2-timeline">
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">📄</div>
+          <div class="a2-tl-content"><strong>Data</strong><span>Source and audit training data for representativeness before it ever reaches a model.</span></div>
+        </div>
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">🧠</div>
+          <div class="a2-tl-content"><strong>Model</strong><span>Train with fairness constraints in mind, not just predictive accuracy.</span></div>
+        </div>
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">⚖️</div>
+          <div class="a2-tl-content"><strong>Fairness Testing</strong><span>Run statistical and counterfactual fairness checks before deployment.</span></div>
+        </div>
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">🧑‍⚖️</div>
+          <div class="a2-tl-content"><strong>Human Review</strong><span>Keep a human in the loop for consequential, high-stakes decisions.</span></div>
+        </div>
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">📈</div>
+          <div class="a2-tl-content"><strong>Monitoring</strong><span>Track outcomes continuously once the system is in production.</span></div>
+        </div>
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">🔍</div>
+          <div class="a2-tl-content"><strong>Audit</strong><span>Bring in independent review to catch what internal teams may miss.</span></div>
+        </div>
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">🔁</div>
+          <div class="a2-tl-content"><strong>Retrain / Improve</strong><span>Feed audit findings back into the data and model, and repeat the cycle.</span></div>
+        </div>
+      </div>
+      <div class="a5-loop-note">↺ Loops back to Data — responsible AI is a continuous lifecycle, not a one-time model check.</div>
+    </div>
+
+    <!-- Development Timeline -->
+    <div style="margin-top:56px;">
+      <div class="a2-block-title">Timeline</div>
+      <div class="a2-timeline">
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">🚀</div>
+          <div class="a2-tl-content"><strong>2014</strong><span>Amazon begins developing an experimental recruiting system.</span></div>
+        </div>
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">📄</div>
+          <div class="a2-tl-content"><strong>2014–2017</strong><span>The system learns patterns from roughly a decade of historical résumés.</span></div>
+        </div>
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">📰</div>
+          <div class="a2-tl-content"><strong>2018</strong><span>Bias concerns are publicly reported (Dastin, 2018).</span></div>
+        </div>
+        <div class="a2-tl-item">
+          <div class="a2-tl-icon">🛑</div>
+          <div class="a2-tl-content"><strong>After Review</strong><span>Amazon disbands the project.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Lesson -->
+    <div style="margin-top:56px;">
+      <div class="a2-block-title">Key Lesson</div>
+      <div class="a2-objective a2-fade">
+        <p>"AI can reproduce yesterday's decisions at tomorrow's scale." High-stakes AI requires more than model
+        accuracy — it requires fairness, explainability, human oversight, and accountability. Accuracy is necessary;
+        accountability is essential.</p>
+      </div>
+    </div>
+
+    <!-- Artifact Information -->
+    <div style="margin-top:56px;">
+      <div class="a2-block-title">Artifact Information</div>
+      <table class="meta" style="max-width:70ch;">
+        <tr><td>Introduction</td><td>This artifact examines Amazon's experimental AI recruiting system as a real-world example of how biased historical data, opaque model behavior, and insufficient governance can create risks in high-stakes AI applications.</td></tr>
+        <tr><td>Description</td><td>The case study analyzes the system's training-data bias, lack of transparency and applicant recourse, and governance weaknesses. It also reflects on how these issues changed my understanding of responsible machine learning development.</td></tr>
+        <tr><td>Objective</td><td>To critically evaluate a real-world ML system using best practices in data preparation, model evaluation, ethical AI, fairness, transparency, and post-deployment governance.</td></tr>
+        <tr><td>Process</td><td>Selected Amazon's AI recruiting case study; examined the historical training data and resulting bias; analyzed model opacity and lack of applicant recourse; evaluated governance and accountability gaps; compared the case with responsible AI practices; proposed technical and organizational mitigation strategies; reflected on how the case changed my approach to future ML projects.</td></tr>
+        <tr><td>Tools &amp; Technologies</td><td>Machine Learning, Data Analysis, Statistical Fairness Testing, Explainable AI (XAI), Responsible AI, Bias Detection, Model Evaluation, AI Governance, Post-Deployment Monitoring</td></tr>
+        <tr><td>Value Proposition</td><td>Demonstrates my ability to evaluate machine learning systems beyond technical performance by considering fairness, transparency, accountability, and real-world consequences.</td></tr>
+        <tr><td>Unique Value</td><td>Combines technical ML reasoning with ethical and leadership analysis. Instead of treating bias as only a data problem, it evaluates the entire AI lifecycle — from training data to deployment and governance.</td></tr>
+        <tr><td>Relevance</td><td>Highly relevant to organizations using AI in hiring, lending, healthcare, finance, cybersecurity, and other high-impact decision-making environments.</td></tr>
+      </table>
+    </div>
+
+    <!-- Skills Demonstrated -->
+    <div style="margin-top:56px;">
+      <div class="a2-block-title">Skills Demonstrated</div>
+      <div class="a2-skills">
+        <span class="a2-skill-badge">Machine Learning</span>
+        <span class="a2-skill-badge">Model Evaluation</span>
+        <span class="a2-skill-badge">Statistical Fairness Testing</span>
+        <span class="a2-skill-badge">Counterfactual Testing</span>
+        <span class="a2-skill-badge">Disparate-Impact Analysis</span>
+        <span class="a2-skill-badge">Explainable AI</span>
+        <span class="a2-skill-badge">Bias Detection</span>
+        <span class="a2-skill-badge">AI Governance</span>
+        <span class="a2-skill-badge">Post-Deployment Monitoring</span>
+        <span class="a2-skill-badge">Responsible AI</span>
+        <span class="a2-skill-badge">Critical Thinking</span>
+        <span class="a2-skill-badge">Ethical Reasoning</span>
+      </div>
+    </div>
+
+    <!-- References -->
+    <div style="margin-top:56px;">
+      <div class="a2-block-title">References</div>
+      <div class="a2-learnings a2-fade">
+        <ul>
+          <li>Dastin, J. (2018). Amazon scraps secret AI recruiting tool that showed bias against women. Reuters.</li>
+          <li>Massachusetts Institute of Technology Technology Review. (2018). Coverage and analysis of Amazon's AI recruiting system.</li>
+          <li>AI Incident Database. (n.d.). Amazon AI recruiting tool incident.</li>
+        </ul>
       </div>
     </div>
 
